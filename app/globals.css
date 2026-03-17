@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --heart-500: #e04d5a;
+  --heart-600: #cc2f3e;
+  --heart-700: #ac2432;
+  --gradient-heart: linear-gradient(135deg, #fef2f2 0%, #fce7e7 50%, #f4a9ad 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-gray-900 bg-white;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  overflow-x: hidden;
+}
+
+/* Smooth focus for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-heart-500;
+}
