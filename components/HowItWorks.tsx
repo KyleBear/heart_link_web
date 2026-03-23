@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "1",
-    title: "Discover",
+    title: "발견",
     description:
-      "Swipe through profiles filtered by age, region, and MBTI. See who’s nearby and who fits what you’re looking for.",
+      "나이, 지역, MBTI로 필터링된 프로필을 스와이프하세요. 가까운 사람, 조건에 맞는 사람을 만나보세요.",
   },
   {
     number: "2",
-    title: "Match",
+    title: "매칭",
     description:
-      "Like who you’re into. When they like you back, it’s a match—and the chat opens so you can say hi right away.",
+      "마음에 드는 사람에게 좋아요를 보내세요. 서로 좋아요를 누르면 매칭되고, 바로 대화가 열립니다.",
   },
   {
     number: "3",
-    title: "Chat & call",
+    title: "채팅 & 통화",
     description:
-      "Message in real time or tap to start a voice call. No need to exchange numbers—everything stays in the app.",
+      "실시간으로 메시지를 보내거나 탭 한 번으로 음성 통화를 시작하세요. 번호 교환 없이 앱 안에서 모두 해결됩니다.",
   },
 ];
 
@@ -34,10 +34,10 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
-            How HeartLink works
+            Heart링크 이용 방법
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Three steps from profile to conversation. Simple by design.
+            프로필에서 대화까지 세 단계. 심플하게 설계되었습니다.
           </p>
         </motion.div>
 

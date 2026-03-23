@@ -1,7 +1,11 @@
-import Link from "next/link";
+"use client";
 
+import Link from "next/link";
+import { useLegalModal } from "@/components/LegalModalProvider";
 
 export function Footer() {
+  const { openTerms, openPrivacy } = useLegalModal();
+
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -14,32 +18,34 @@ export function Footer() {
               Heart<span className="text-heart-400">Link</span>
             </Link>
             <p className="text-sm text-gray-400 mt-2 max-w-xs">
-              Find your person. Swipe, match, connect.
+              나의 사람을 만나다. 스와이프, 매칭, 연결.
             </p>
           </div>
           <div className="flex flex-wrap gap-6 md:gap-8">
-            <Link
-              href="/privacy"
-              className="text-sm hover:text-white transition-colors"
+            <button
+              type="button"
+              onClick={openTerms}
+              className="text-sm hover:text-white transition-colors text-left"
             >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-sm hover:text-white transition-colors"
+              이용약관
+            </button>
+            <button
+              type="button"
+              onClick={openPrivacy}
+              className="text-sm hover:text-white transition-colors text-left"
             >
-              Terms of Service
-            </Link>
+              개인정보처리방침
+            </button>
             <a
               href="mailto:hello@heartlink.app"
               className="text-sm hover:text-white transition-colors"
             >
-              Contact
+              문의하기
             </a>
           </div>
         </div>
         <div className="mt-10 pt-8 border-t border-gray-800 text-sm text-gray-500">
-          © {new Date().getFullYear()} HeartLink. All rights reserved.
+          © {new Date().getFullYear()} Heart링크. All rights reserved.
         </div>
       </div>
     </footer>

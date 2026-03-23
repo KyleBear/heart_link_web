@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 
 const points = [
   {
-    title: "Secure by design",
+    title: "설계 단계부터 보안",
     description:
-      "HeartLink runs on Firebase—industry-standard security, encrypted data, and reliable infrastructure so your conversations stay private.",
+      "Heart링크는 Firebase 기반으로 동작합니다. 업계 표준 보안, 암호화된 데이터, 안정적인 인프라로 대화가 비공개로 유지됩니다.",
   },
   {
-    title: "Block & report",
+    title: "차단 & 신고",
     description:
-      "Unwanted attention? Block or report in one tap. Our team reviews reports quickly so the community stays safe and respectful.",
+      "원하지 않는 접근이 있나요? 한 번의 탭으로 차단하거나 신고하세요. 신고 내용을 빠르게 검토해 안전하고 건전한 커뮤니티를 유지합니다.",
   },
   {
-    title: "Privacy-first messaging",
+    title: "프라이버시 우선 메시징",
     description:
-      "Chat and call within the app. You choose when—or if—to share your number. We don’t sell your data to third parties.",
+      "앱 안에서만 채팅하고 통화하세요. 번호를 공유할지, 언제 할지는 본인이 정합니다. 개인 데이터를 제3자에게 판매하지 않습니다.",
   },
 ];
 
@@ -31,10 +31,10 @@ export function SafetyTrust() {
           className="text-center mb-16"
         >
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
-            Safety & trust
+            안전과 신뢰
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            We take your safety seriously so you can focus on connecting.
+            안전을 최우선으로 해서, 연결에만 집중하실 수 있게 합니다.
           </p>
         </motion.div>
 

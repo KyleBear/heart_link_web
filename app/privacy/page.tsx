@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  PrivacyDocumentBody,
+  TermsDocumentBody,
+} from "@/components/legal/PolicyDocumentBodies";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — HeartLink",
+  title: "약관 및 정책 — Heart링크",
   description:
-    "HeartLink Privacy Policy. How we collect, use, and protect your data.",
+    "Heart링크 이용약관, 개인정보처리방침. 서비스 이용 규정 및 개인정보 수집·이용·보호 안내.",
 };
+
+const navItems = [
+  { id: "terms", number: "01", label: "이용약관" },
+  { id: "privacy", number: "02", label: "개인정보처리방침" },
+] as const;
 
 export default function PrivacyPage() {
   return (
@@ -22,107 +31,36 @@ export default function PrivacyPage() {
       </header>
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <h1 className="font-display text-3xl font-bold text-gray-900">
-          Privacy Policy
+          약관 및 정책
         </h1>
-        <p className="text-gray-500 mt-2">Last updated: March 2025</p>
+        <p className="text-gray-500 mt-2">최종 수정일: 2025년 3월</p>
 
-        <div className="prose prose-gray mt-10 space-y-8 text-gray-700">
-          <section>
-            <h2 className="font-display text-xl font-semibold text-gray-900 mt-8 mb-3">
-              Introduction
-            </h2>
-            <p className="leading-relaxed">
-              HeartLink (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
-              protecting your privacy. This Privacy Policy explains how we
-              collect, use, disclose, and safeguard your information when you use
-              our dating and social application.
-            </p>
+        <nav className="mt-8 flex flex-wrap gap-3" aria-label="정책 목차">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gray-100 text-gray-800 font-medium text-sm hover:bg-heart-100 hover:text-heart-700 transition-colors"
+            >
+              <span className="text-heart-600 font-semibold">{item.number}</span>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="mt-14 space-y-16">
+          <section id="terms" className="scroll-mt-24">
+            <TermsDocumentBody />
           </section>
 
-          <section>
-            <h2 className="font-display text-xl font-semibold text-gray-900 mt-8 mb-3">
-              Information we collect
-            </h2>
-            <p className="leading-relaxed mb-3">
-              We may collect information you provide directly, including:
-            </p>
-            <ul className="list-disc pl-6 space-y-1">
-              <li>Account details (email, name, profile information)</li>
-              <li>Photos and preferences you add to your profile</li>
-              <li>Messages and call data within the app</li>
-              <li>Preferences such as age range, region, and MBTI</li>
-            </ul>
-            <p className="leading-relaxed mt-4">
-              We also collect certain information automatically, such as device
-              type, IP address, and usage data, to improve our services and
-              security.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold text-gray-900 mt-8 mb-3">
-              How we use your information
-            </h2>
-            <p className="leading-relaxed">
-              We use your information to operate HeartLink, including matching
-              you with other users, enabling chat and voice calls, personalizing
-              your experience, enforcing our terms and safety policies, and
-              communicating with you. We do not sell your personal data to third
-              parties for advertising.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold text-gray-900 mt-8 mb-3">
-              Data security
-            </h2>
-            <p className="leading-relaxed">
-              We use industry-standard security measures, including encryption
-              and secure infrastructure (e.g., Firebase), to protect your data.
-              Despite our efforts, no method of transmission over the internet is
-              100% secure.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold text-gray-900 mt-8 mb-3">
-              Your choices
-            </h2>
-            <p className="leading-relaxed">
-              You can update your profile, adjust privacy settings, block or
-              report other users, and request deletion of your account and
-              associated data by contacting us at{" "}
-              <a
-                href="mailto:privacy@heartlink.app"
-                className="text-heart-600 hover:underline"
-              >
-                privacy@heartlink.app
-              </a>
-              .
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold text-gray-900 mt-8 mb-3">
-              Contact
-            </h2>
-            <p className="leading-relaxed">
-              For questions about this Privacy Policy or our practices, contact
-              us at{" "}
-              <a
-                href="mailto:hello@heartlink.app"
-                className="text-heart-600 hover:underline"
-              >
-                hello@heartlink.app
-              </a>
-              .
-            </p>
+          <section id="privacy" className="scroll-mt-24">
+            <PrivacyDocumentBody />
           </section>
         </div>
 
         <p className="mt-12 pt-8 border-t border-gray-100">
           <Link href="/" className="text-heart-600 font-medium hover:underline">
-            ← Back to HeartLink
+            ← Heart링크로 돌아가기
           </Link>
         </p>
       </article>

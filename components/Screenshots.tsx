@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const screens = [
   {
-    label: "Discover",
+    label: "발견",
     ui: (
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden">
         <div className="p-4 flex gap-2">
@@ -26,7 +26,7 @@ const screens = [
     ),
   },
   {
-    label: "Swipe",
+    label: "스와이프",
     ui: (
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden items-center justify-center p-6">
         <div className="w-full max-w-[200px] aspect-[3/4] rounded-2xl bg-gradient-to-b from-heart-400/30 to-heart-600/30 border-2 border-heart-500/50 flex flex-col items-center justify-end p-4">
@@ -48,7 +48,7 @@ const screens = [
     ),
   },
   {
-    label: "Chat & call",
+    label: "채팅 & 통화",
     ui: (
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-700 flex items-center gap-3">
@@ -97,10 +97,10 @@ export function Screenshots() {
           className="text-center mb-16"
         >
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
-            Built for the way you date
+            데이팅 방식에 맞춘 앱
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Discover, swipe, match, and talk—all in one place.
+            발견, 스와이프, 매칭, 대화—모두 한곳에서.
           </p>
         </motion.div>
 

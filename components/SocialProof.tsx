@@ -3,29 +3,29 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "10,000+", label: "Active users" },
-  { value: "5,000+", label: "Matches made" },
-  { value: "50k+", label: "Messages sent" },
+  { value: "10,000+", label: "활성 사용자" },
+  { value: "5,000+", label: "성사된 매칭" },
+  { value: "50k+", label: "주고받은 메시지" },
 ];
 
 const testimonials = [
   {
     quote:
-      "I was tired of endless small talk. HeartLink’s voice calls made it easy to actually get to know someone before meeting. Found my person in a month.",
-    name: "Sarah M.",
-    role: "Matched 3 months ago",
+      "끝없는 인사만 하다 지쳤는데, Heart링크 음성 통화 덕분에 만나기 전에 진짜로 알아갈 수 있었어요. 한 달 만에 제 사람을 만났습니다.",
+    name: "김서연",
+    role: "3개월 전 매칭",
   },
   {
     quote:
-      "The MBTI and region filters saved me so much time. Everyone on my feed actually felt relevant. First dating app that didn’t feel like a second job.",
-    name: "James K.",
-    role: "User since launch",
+      "MBTI랑 지역 필터가 진짜 시간을 아껴줘요. 피드에 나오는 사람들이 다 맞는 느낌이고, 처음으로 데이팅 앱이 부담스럽지 않았어요.",
+    name: "이준호",
+    role: "출시 때부터 이용 중",
   },
   {
     quote:
-      "Real-time chat and the option to call when we were both ready made everything feel safe and natural. No more waiting days for a reply.",
-    name: "Alex T.",
-    role: "In a relationship",
+      "실시간 채팅하고 둘 다 준비됐을 때 통화할 수 있어서 안전하고 자연스러웠어요. 답장 며칠 기다리기 없이 좋았습니다.",
+    name: "박지우",
+    role: "연애 중",
   },
 ];
 
@@ -56,7 +56,7 @@ export function SocialProof() {
             viewport={{ once: true }}
             className="font-display text-2xl sm:text-3xl font-bold text-gray-900"
           >
-            Real people, real connections
+            진짜 사람, 진짜 인연
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -64,7 +64,7 @@ export function SocialProof() {
             viewport={{ once: true }}
             className="text-gray-600 mt-2 max-w-xl mx-auto"
           >
-            Join thousands who are done with swipe fatigue and ready for something real.
+            스와이프 피로에서 벗어나 진짜 인연을 찾을 준비가 된 수천 명과 함께하세요.
           </motion.p>
         </div>
 

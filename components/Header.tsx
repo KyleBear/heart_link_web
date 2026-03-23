@@ -23,19 +23,19 @@ export function Header() {
               href="#features"
               className="text-gray-600 hover:text-heart-600 transition-colors text-sm font-medium"
             >
-              Features
+              기능
             </Link>
             <Link
               href="#how-it-works"
               className="text-gray-600 hover:text-heart-600 transition-colors text-sm font-medium"
             >
-              How it works
+              이용 방법
             </Link>
             <Link
               href="#safety"
               className="text-gray-600 hover:text-heart-600 transition-colors text-sm font-medium"
             >
-              Safety
+              안전
             </Link>
             <a
               href="https://play.google.com/store/apps"
@@ -43,7 +43,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-heart-500 text-white text-sm font-medium hover:bg-heart-600 transition-colors"
             >
-              Download
+              다운로드
             </a>
           </div>
 
@@ -51,7 +51,7 @@ export function Header() {
             type="button"
             className="md:hidden p-2 text-gray-600 hover:text-gray-900"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            aria-label="메뉴 열기"
           >
             <svg
               className="w-6 h-6"
@@ -92,21 +92,21 @@ export function Header() {
                   className="text-gray-600 hover:text-heart-600 font-medium"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Features
+                  기능
                 </Link>
                 <Link
                   href="#how-it-works"
                   className="text-gray-600 hover:text-heart-600 font-medium"
                   onClick={() => setMobileOpen(false)}
                 >
-                  How it works
+                  이용 방법
                 </Link>
                 <Link
                   href="#safety"
                   className="text-gray-600 hover:text-heart-600 font-medium"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Safety
+                  안전
                 </Link>
                 <a
                   href="https://play.google.com/store/apps"
@@ -114,7 +114,7 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-4 py-3 rounded-full bg-heart-500 text-white font-medium"
                 >
-                  Download for Android
+                  Android 다운로드
                 </a>
               </div>
             </motion.div>
