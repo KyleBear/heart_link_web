@@ -14,6 +14,8 @@ import {
   PrivacyDocumentBody,
   TermsDocumentBody,
 } from "@/components/legal/PolicyDocumentBodies";
+import { LegalDocumentPdf } from "@/components/legal/LegalDocumentPdf";
+import { LEGAL_PDF_URLS } from "@/components/legal/legalPdf";
 
 type LegalModal = "terms" | "privacy" | null;
 
@@ -59,6 +61,9 @@ export function LegalModalProvider({ children }: { children: React.ReactNode }) 
     openPrivacy: () => setActive("privacy"),
   };
 
+  const pdfSrc = active === "terms" ? LEGAL_PDF_URLS.terms : active === "privacy" ? LEGAL_PDF_URLS.privacy : null;
+  const pdfTitle = active === "terms" ? "이용약관 PDF" : active === "privacy" ? "개인정보처리방침 PDF" : "";
+
   const modal =
     mounted &&
     createPortal(
@@ -85,7 +90,7 @@ export function LegalModalProvider({ children }: { children: React.ReactNode }) 
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={titleId}
-                className="pointer-events-auto relative w-full sm:max-w-3xl max-h-[min(92vh,880px)] bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden"
+                className="pointer-events-auto relative flex w-full flex-col sm:max-w-4xl max-h-[min(94vh,920px)] bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 40 }}
@@ -115,14 +120,15 @@ export function LegalModalProvider({ children }: { children: React.ReactNode }) 
                     />
                   </svg>
                 </button>
-                <div className="overflow-y-auto overscroll-contain px-5 sm:px-8 pt-14 pb-8 text-left">
-                  <p className="text-gray-500 text-sm mb-4">
-                    최종 수정일: 2025년 3월
-                  </p>
-                  {active === "terms" ? (
-                    <TermsDocumentBody />
-                  ) : (
-                    <PrivacyDocumentBody />
+                <div className="flex min-h-0 flex-1 flex-col">
+                  <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 sm:px-8 pt-14 pb-6 text-left">
+                    <p className="text-gray-500 text-sm mb-4">최종 수정일: 2025년 3월</p>
+                    {active === "terms" ? <TermsDocumentBody /> : <PrivacyDocumentBody />}
+                  </div>
+                  {pdfSrc && (
+                    <div className="shrink-0 border-t border-gray-100 bg-gray-50 px-4 py-4 sm:px-6">
+                      <LegalDocumentPdf src={pdfSrc} title={pdfTitle} className="bg-white" />
+                    </div>
                   )}
                 </div>
               </motion.div>

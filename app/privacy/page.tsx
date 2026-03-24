@@ -4,11 +4,13 @@ import {
   PrivacyDocumentBody,
   TermsDocumentBody,
 } from "@/components/legal/PolicyDocumentBodies";
+import { LegalDocumentPdf } from "@/components/legal/LegalDocumentPdf";
+import { LEGAL_PDF_URLS } from "@/components/legal/legalPdf";
 
 export const metadata: Metadata = {
-  title: "약관 및 정책 — Heart링크",
+  title: "약관 및 정책 — Heart링크 (만 18세 이상 성인 전용)",
   description:
-    "Heart링크 이용약관, 개인정보처리방침. 서비스 이용 규정 및 개인정보 수집·이용·보호 안내.",
+    "HeartLink는 만 18세 이상 성인 전용 서비스입니다. 이용약관, 개인정보처리방침 및 서비스 이용 규정 안내.",
 };
 
 const navItems = [
@@ -35,6 +37,18 @@ export default function PrivacyPage() {
         </h1>
         <p className="text-gray-500 mt-2">최종 수정일: 2025년 3월</p>
 
+        <div
+          className="mt-6 rounded-2xl border border-gray-200 bg-gray-50 px-4 py-4 sm:px-5 text-gray-800 text-sm leading-relaxed"
+          role="note"
+        >
+          <p className="font-semibold text-gray-900 mb-2">이용 대상 (성인 전용)</p>
+          <p>
+            HeartLink는 만 18세 이상이며 법적 구속력 있는 계약을 체결할 수 있는 이용자만 이용할 수
+            있습니다. 당사는 연령 요건 충족 여부를 확인하기 위한 절차를 운영할 수 있으며, 요건을
+            충족하지 않는 경우 서비스 이용이 제한될 수 있습니다.
+          </p>
+        </div>
+
         <nav className="mt-8 flex flex-wrap gap-3" aria-label="정책 목차">
           {navItems.map((item) => (
             <a
@@ -51,10 +65,20 @@ export default function PrivacyPage() {
         <div className="mt-14 space-y-16">
           <section id="terms" className="scroll-mt-24">
             <TermsDocumentBody />
+            <LegalDocumentPdf
+              src={LEGAL_PDF_URLS.terms}
+              title="이용약관 PDF"
+              className="mt-10"
+            />
           </section>
 
           <section id="privacy" className="scroll-mt-24">
             <PrivacyDocumentBody />
+            <LegalDocumentPdf
+              src={LEGAL_PDF_URLS.privacy}
+              title="개인정보처리방침 PDF"
+              className="mt-10"
+            />
           </section>
         </div>
 

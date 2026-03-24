@@ -37,7 +37,7 @@ export function Footer() {
               개인정보처리방침
             </button>
             <a
-              href="mailto:hello@heartlink.app"
+              href="mailto:juongho1025@gmail.com"
               className="text-sm hover:text-white transition-colors"
             >
               문의하기
