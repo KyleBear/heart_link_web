@@ -15,10 +15,10 @@ export function Footer() {
               href="/"
               className="font-display font-semibold text-xl text-white"
             >
-              Heart<span className="text-heart-400">Link</span>
+              Heart<span className="text-heart-400">Vibe</span>
             </Link>
             <p className="text-sm text-gray-400 mt-2 max-w-xs">
-              나의 사람을 만나다. 스와이프, 매칭, 연결.
+              홍대 이태원 성수 기준 트랜디한 소통앱
             </p>
           </div>
           <div className="flex flex-wrap gap-6 md:gap-8">
@@ -36,6 +36,12 @@ export function Footer() {
             >
               개인정보처리방침
             </button>
+            <Link
+              href="/delete-account"
+              className="text-sm hover:text-white transition-colors"
+            >
+              계정 삭제
+            </Link>
             <a
               href="mailto:juongho1025@gmail.com"
               className="text-sm hover:text-white transition-colors"
@@ -45,7 +51,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 pt-8 border-t border-gray-800 text-sm text-gray-500">
-          © {new Date().getFullYear()} Heart링크. All rights reserved.
+          © {new Date().getFullYear()} 하트바이브. All rights reserved.
         </div>
       </div>
     </footer>

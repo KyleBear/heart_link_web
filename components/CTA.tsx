@@ -21,7 +21,7 @@ export function CTA() {
           viewport={{ once: true }}
           className="text-white/90 mt-6 text-lg sm:text-xl"
         >
-          이미 1만 명 이상이 Heart링크에서 진짜 인연을 찾고 있습니다.
+          이미 1만 명 이상이 하트바이브에서 진짜 인연을 찾고 있습니다.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -34,7 +34,7 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
-            Heart링크 이용 방법
+            하트바이브 이용 방법
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
             프로필에서 대화까지 세 단계. 심플하게 설계되었습니다.

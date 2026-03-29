@@ -19,7 +19,7 @@ export function TermsDocumentBody() {
             이용 자격
           </h3>
           <p className="leading-relaxed">
-            HeartLink는 만 18세 이상이며 법적 구속력 있는 계약을 체결할 수 있는 이용자만 사용할 수
+            HeartVibe는 만 18세 이상이며 법적 구속력 있는 계약을 체결할 수 있는 이용자만 사용할 수
             있습니다. 당사는 연령 요건 충족 여부를 확인하기 위한 절차를 운영할 수 있습니다.
           </p>
         </div>
@@ -85,7 +85,7 @@ export function PrivacyDocumentBody() {
         <div>
           <h3 className="font-display text-lg font-semibold text-gray-900 mt-0 mb-2">소개</h3>
           <p className="leading-relaxed">
-            HeartLink(이하 &quot;당사&quot;)는 이용자의 개인정보 보호를 중요하게 생각합니다.
+            HeartVibe(이하 &quot;당사&quot;)는 이용자의 개인정보 보호를 중요하게 생각합니다.
           </p>
         </div>
         <div>

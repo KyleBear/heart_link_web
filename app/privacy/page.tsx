@@ -8,9 +8,9 @@ import { LegalDocumentPdf } from "@/components/legal/LegalDocumentPdf";
 import { LEGAL_PDF_URLS } from "@/components/legal/legalPdf";
 
 export const metadata: Metadata = {
-  title: "약관 및 정책 — Heart링크 (만 18세 이상 성인 전용)",
+  title: "약관 및 정책 — 하트바이브 (만 18세 이상 성인 전용)",
   description:
-    "HeartLink는 만 18세 이상 성인 전용 서비스입니다. 이용약관, 개인정보처리방침 및 서비스 이용 규정 안내.",
+    "HeartVibe는 만 18세 이상 성인 전용 서비스입니다. 이용약관, 개인정보처리방침 및 서비스 이용 규정 안내.",
 };
 
 const navItems = [
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             href="/"
             className="font-display font-semibold text-lg text-gray-900"
           >
-            Heart<span className="text-heart-500">Link</span>
+            Heart<span className="text-heart-500">Vibe</span>
           </Link>
         </div>
       </header>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
         >
           <p className="font-semibold text-gray-900 mb-2">이용 대상 (성인 전용)</p>
           <p>
-            HeartLink는 만 18세 이상이며 법적 구속력 있는 계약을 체결할 수 있는 이용자만 이용할 수
+            HeartVibe는 만 18세 이상이며 법적 구속력 있는 계약을 체결할 수 있는 이용자만 이용할 수
             있습니다. 당사는 연령 요건 충족 여부를 확인하기 위한 절차를 운영할 수 있으며, 요건을
             충족하지 않는 경우 서비스 이용이 제한될 수 있습니다.
           </p>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
 
         <p className="mt-12 pt-8 border-t border-gray-100">
           <Link href="/" className="text-heart-600 font-medium hover:underline">
-            ← Heart링크로 돌아가기
+            ← 하트바이브로 돌아가기
           </Link>
         </p>
       </article>

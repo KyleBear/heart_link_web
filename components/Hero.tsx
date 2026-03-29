@@ -31,7 +31,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
           >
-            마음에 드는 사람만 스와이프하고, 나를 알아주는 사람과 매칭되세요. 실시간 채팅과 통화—농담 없이, 기다림 없이. Heart링크에서 인연이 더 큰 이야기가 됩니다.
+            마음에 드는 사람만 스와이프하고, 나를 알아주는 사람과 매칭되세요. 실시간 채팅과 통화—농담 없이, 기다림 없이. 하트바이브에서 인연이 더 큰 이야기가 됩니다.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}

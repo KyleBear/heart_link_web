@@ -1,6 +1,6 @@
-# HeartLink Landing Page
+# HeartVibe Landing Page
 
-Production-ready marketing website for **HeartLink** — a dating and social app. Built to convert visitors into app downloads.
+Production-ready marketing website for **HeartVibe** — a dating and social app. Built to convert visitors into app downloads.
 
 ## Tech Stack
 
