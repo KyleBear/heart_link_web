@@ -37,6 +37,12 @@ export function Footer() {
               개인정보처리방침
             </button>
             <Link
+              href="/csae-standards"
+              className="text-sm hover:text-white transition-colors"
+            >
+              아동 안전 정책
+            </Link>
+            <Link
               href="/delete-account"
               className="text-sm hover:text-white transition-colors"
             >
