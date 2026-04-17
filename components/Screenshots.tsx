@@ -12,12 +12,27 @@ const screens = [
           <div className="w-9 h-9 rounded-full bg-heart-500" />
         </div>
         <div className="flex-1 p-4 space-y-3">
-          {[1, 2, 3].map((i) => (
+          {[
+            { img: "https://i.pravatar.cc/48?img=5", name: "지수", age: 24, loc: "서울" },
+            { img: "https://i.pravatar.cc/48?img=9", name: "민지", age: 26, loc: "경기" },
+            { img: "https://i.pravatar.cc/48?img=16", name: "하은", age: 23, loc: "부산" },
+          ].map((person, i) => (
             <div key={i} className="flex gap-3 items-center p-3 rounded-xl bg-gray-800">
-              <div className="w-12 h-12 rounded-full bg-heart-400/50" />
+              <img
+                src={person.img}
+                className="w-12 h-12 rounded-full object-cover"
+                alt={person.name}
+              />
               <div className="flex-1">
-                <div className="h-2.5 w-24 bg-gray-600 rounded" />
-                <div className="h-2 w-16 bg-gray-700 rounded mt-1" />
+                <div className="text-white text-sm font-medium">
+                  {person.name}, {person.age}
+                </div>
+                <div className="text-gray-400 text-xs">{person.loc}</div>
+              </div>
+              <div className="w-8 h-8 rounded-full bg-heart-500/20 flex items-center justify-center">
+                <svg className="w-4 h-4 text-heart-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
               </div>
             </div>
           ))}
@@ -26,13 +41,19 @@ const screens = [
     ),
   },
   {
-    label: "스와이프",
+    label: "매칭",
     ui: (
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden items-center justify-center p-6">
-        <div className="w-full max-w-[200px] aspect-[3/4] rounded-2xl bg-gradient-to-b from-heart-400/30 to-heart-600/30 border-2 border-heart-500/50 flex flex-col items-center justify-end p-4">
-          <div className="w-16 h-16 rounded-full bg-gray-700 mb-4" />
-          <div className="h-3 w-20 bg-gray-600 rounded mb-2" />
-          <div className="h-2 w-14 bg-gray-600 rounded" />
+        <div className="w-full max-w-[200px] aspect-[3/4] rounded-2xl overflow-hidden relative">
+          <img
+            src="https://i.pravatar.cc/300?img=47"
+            className="w-full h-full object-cover"
+            alt="매칭 프로필"
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <div className="text-white font-medium text-sm">수현, 25</div>
+            <div className="text-white/70 text-xs">서울 · ENFJ</div>
+          </div>
         </div>
         <div className="flex gap-6 mt-6">
           <div className="w-14 h-14 rounded-full border-2 border-gray-500 flex items-center justify-center">
@@ -52,10 +73,14 @@ const screens = [
     ui: (
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-700 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-heart-500/80" />
+          <img
+            src="https://i.pravatar.cc/40?img=47"
+            className="w-10 h-10 rounded-full object-cover"
+            alt="채팅 상대"
+          />
           <div className="flex-1">
-            <div className="h-3 w-24 bg-gray-600 rounded" />
-            <div className="h-2 w-16 bg-gray-700 rounded mt-1" />
+            <div className="text-white text-sm font-medium">수현</div>
+            <div className="text-green-400 text-xs">온라인</div>
           </div>
           <div className="w-10 h-10 rounded-full bg-heart-500 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -64,20 +89,24 @@ const screens = [
           </div>
         </div>
         <div className="flex-1 p-4 space-y-3">
-          <div className="flex justify-start">
-            <div className="rounded-2xl rounded-bl-md bg-gray-700 px-4 py-2 max-w-[85%]">
-              <div className="h-2 w-28 bg-gray-500 rounded" />
-              <div className="h-2 w-20 bg-gray-500 rounded mt-2" />
+          <div className="flex justify-start gap-2 items-end">
+            <img
+              src="https://i.pravatar.cc/28?img=47"
+              className="w-7 h-7 rounded-full object-cover flex-shrink-0"
+              alt=""
+            />
+            <div className="rounded-2xl rounded-bl-md bg-gray-700 px-3 py-2">
+              <div className="text-white text-xs">안녕하세요! 😊</div>
             </div>
           </div>
           <div className="flex justify-end">
-            <div className="rounded-2xl rounded-br-md bg-heart-500 px-4 py-2 max-w-[85%]">
-              <div className="h-2 w-24 bg-heart-400 rounded" />
+            <div className="rounded-2xl rounded-br-md bg-heart-500 px-3 py-2">
+              <div className="text-white text-xs">반가워요! 어디 사세요?</div>
             </div>
           </div>
           <div className="flex justify-end">
-            <div className="rounded-2xl rounded-br-md bg-heart-500 px-4 py-2 max-w-[85%]">
-              <div className="h-2 w-32 bg-heart-400 rounded" />
+            <div className="rounded-2xl rounded-br-md bg-heart-500 px-3 py-2">
+              <div className="text-white text-xs">저는 강남 쪽이에요 ☺️</div>
             </div>
           </div>
         </div>
@@ -94,14 +123,37 @@ export function Screenshots() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">
             데이팅 방식에 맞춘 앱
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            발견, 스와이프, 매칭, 대화—모두 한곳에서.
+            발견, 매칭, 채팅&amp;통화—모두 한곳에서.
           </p>
+          <p className="text-heart-600 font-semibold mt-2 text-base sm:text-lg">
+            100% 무료매칭, 피드 작성으로 나에게 맞는 이성에게 어필
+          </p>
+        </motion.div>
+
+        {/* 이벤트 배너 */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mb-12 mx-auto max-w-xl"
+        >
+          <div className="bg-gradient-to-r from-heart-500 to-rose-500 rounded-2xl px-6 py-4 flex items-center justify-center gap-3 shadow-lg">
+            <span className="text-xl">💑</span>
+            <p className="text-white text-sm sm:text-base text-center leading-snug">
+              현재 커플 매칭 실시간 이벤트 진행중&nbsp;
+              <strong className="text-yellow-300">마감 임박</strong>
+            </p>
+            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-300 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-300" />
+            </span>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">

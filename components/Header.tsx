@@ -15,7 +15,7 @@ export function Header() {
             href="/"
             className="font-display font-semibold text-xl text-gray-900 tracking-tight"
           >
-            Heart<span className="text-heart-500">Link</span>
+            Heart<span className="text-heart-500">Vibe</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
