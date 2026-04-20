@@ -13,9 +13,9 @@ const screens = [
         </div>
         <div className="flex-1 p-4 space-y-3">
           {[
-            { img: "https://i.pravatar.cc/48?img=5", name: "지수", age: 24, loc: "서울" },
-            { img: "https://i.pravatar.cc/48?img=9", name: "민지", age: 26, loc: "경기" },
-            { img: "https://i.pravatar.cc/48?img=16", name: "하은", age: 23, loc: "부산" },
+            { img: "/avatars/korean/p_3775529.jpg", name: "지수", age: 24, loc: "서울" },
+            { img: "/avatars/korean/p_2387400.jpg", name: "민지", age: 26, loc: "경기" },
+            { img: "/avatars/korean/pm_11297502.jpg", name: "준호", age: 27, loc: "서울" },
           ].map((person, i) => (
             <div key={i} className="flex gap-3 items-center p-3 rounded-xl bg-gray-800">
               <img
@@ -46,7 +46,7 @@ const screens = [
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden items-center justify-center p-6">
         <div className="w-full max-w-[200px] aspect-[3/4] rounded-2xl overflow-hidden relative">
           <img
-            src="https://i.pravatar.cc/300?img=47"
+            src="/avatars/korean/p_3237719.jpg"
             className="w-full h-full object-cover"
             alt="매칭 프로필"
           />
@@ -74,7 +74,7 @@ const screens = [
       <div className="h-full flex flex-col bg-gray-900 rounded-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-700 flex items-center gap-3">
           <img
-            src="https://i.pravatar.cc/40?img=47"
+            src="/avatars/korean/p_3775541.jpg"
             className="w-10 h-10 rounded-full object-cover"
             alt="채팅 상대"
           />
@@ -91,7 +91,7 @@ const screens = [
         <div className="flex-1 p-4 space-y-3">
           <div className="flex justify-start gap-2 items-end">
             <img
-              src="https://i.pravatar.cc/28?img=47"
+              src="/avatars/korean/p_3775541.jpg"
               className="w-7 h-7 rounded-full object-cover flex-shrink-0"
               alt=""
             />

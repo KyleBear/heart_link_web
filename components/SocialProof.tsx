@@ -86,6 +86,27 @@ export function SocialProof() {
             </motion.div>
           ))}
         </div>
+
+        {/* 커플 매칭 사진 배너 */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 rounded-3xl overflow-hidden relative h-64 sm:h-80"
+        >
+          <img
+            src="/avatars/korean/couple1.jpg"
+            alt="하트바이브 커플 매칭"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center px-8 sm:px-12">
+            <p className="text-white/80 text-sm font-medium mb-1">실제 매칭 커플</p>
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white leading-tight">
+              오늘도 누군가의<br />인연이 시작됩니다
+            </h3>
+            <p className="text-white/70 mt-2 text-sm">하트바이브에서 만난 실제 커플</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
