@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export function CTA() {
@@ -13,7 +14,7 @@ export function CTA() {
           viewport={{ once: true }}
           className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
         >
-          다음 이야기는 스와이프 한 번으로 시작됩니다.
+          스와이프 한번으로 행복의 시작
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -21,7 +22,10 @@ export function CTA() {
           viewport={{ once: true }}
           className="text-white/90 mt-6 text-lg sm:text-xl"
         >
-          이미 1만 명 이상이 하트바이브에서 진짜 인연을 찾고 있습니다.
+          이미 1만 명 이상이 하트바이브에서 진짜 인연을 찾고 있습니다.<br />
+          <Link href="/register" className="inline-block mt-3 text-yellow-300 font-bold underline underline-offset-2 hover:text-yellow-200 transition-colors">
+            🎁 사전등록 이벤트 참여하기 →
+          </Link>
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
