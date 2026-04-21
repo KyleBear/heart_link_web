@@ -32,7 +32,7 @@ const FAQS = [
 export default function RegisterPage() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", gender: "", beta: false });
   const [submitted, setSubmitted] = useState(false);
-  const EVENT_CODE = "HV-2025LOVE";
+  const EVENT_CODE = "SPARK7294";
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
