@@ -40,10 +40,8 @@ export default function RegisterPage() {
   function validate() {
     const e: Record<string, string> = {};
     if (!form.name.trim()) e.name = "이름을 입력해주세요.";
-    if (!form.phone.trim() || !/^01[0-9]{8,9}$/.test(form.phone.replace(/-/g, "")))
-      e.phone = "올바른 휴대폰 번호를 입력해주세요.";
-    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "올바른 이메일을 입력해주세요.";
+    if (!form.phone.trim()) e.phone = "휴대폰 번호를 입력해주세요.";
+    if (!form.email.trim()) e.email = "이메일을 입력해주세요.";
     if (!form.gender) e.gender = "성별을 선택해주세요.";
     return e;
   }
