@@ -32,6 +32,7 @@ const FAQS = [
 export default function RegisterPage() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", gender: "", beta: false });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const EVENT_CODE = "SPARK7294";
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -47,12 +48,24 @@ export default function RegisterPage() {
     return e;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
     setErrors({});
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch {
+      // 제출 실패해도 완료 화면 노출
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   }
 
   return (
@@ -204,7 +217,7 @@ export default function RegisterPage() {
               type="submit"
               className="w-full py-4 rounded-2xl bg-gradient-to-r from-heart-500 to-rose-500 text-white font-bold text-base shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all"
             >
-              무료 사전등록 하기
+              {loading ? "등록 중..." : "무료 사전등록 하기"}
             </button>
 
             <p className="text-xs text-gray-400 text-center">
