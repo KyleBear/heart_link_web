@@ -32,14 +32,9 @@ const FAQS = [
 export default function RegisterPage() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", gender: "", beta: false });
   const [submitted, setSubmitted] = useState(false);
-  const [eventCode, setEventCode] = useState("");
+  const EVENT_CODE = "HV-2025LOVE";
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  function generateCode() {
-    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-    return "HV-" + Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
-  }
 
   function validate() {
     const e: Record<string, string> = {};
@@ -57,7 +52,6 @@ export default function RegisterPage() {
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
     setErrors({});
-    setEventCode(generateCode());
     setSubmitted(true);
   }
 
@@ -228,7 +222,7 @@ export default function RegisterPage() {
 
             <div className="mt-6 bg-heart-50 rounded-2xl p-5">
               <p className="text-xs text-heart-600 font-semibold mb-2">나의 이벤트 코드</p>
-              <div className="font-mono text-2xl font-bold text-heart-700 tracking-widest">{eventCode}</div>
+              <div className="font-mono text-2xl font-bold text-heart-700 tracking-widest">{EVENT_CODE}</div>
               <p className="text-xs text-gray-400 mt-2">앱 설치 후 마이페이지 → 이벤트 코드 입력란에 넣어주세요</p>
             </div>
 
