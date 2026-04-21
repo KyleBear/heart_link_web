@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     await fetch(scriptUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      body: JSON.stringify({ ...body, sheetId: process.env.GOOGLE_SHEET_ID }),
     });
     return NextResponse.json({ success: true });
   } catch {
