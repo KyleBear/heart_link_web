@@ -7,7 +7,50 @@ const EVENT_BENEFITS = [
   { icon: "🎁", title: "프리미엄 1개월 무료", desc: "사전등록자 전원 프리미엄 멤버십 1개월 제공" },
   { icon: "💌", title: "이벤트 전용 코드 발급", desc: "출시 당일 앱 내 입력 시 추가 혜택 즉시 적용" },
   { icon: "⭐", title: "먼저 만나는 인연", desc: "정식 출시 전 베타 유저 우선 매칭 큐 배정" },
-  { icon: "🏆", title: "커플 매칭 이벤트 참여권", desc: "사전등록자 한정 커플 매칭 특별 이벤트 자동 참여" },
+  { icon: "🏆", title: "커플 매칭 이벤트 참여권", desc: "사전등록자 한정 커플 매칭 특별 이벤트 + 상품권 증정" },
+];
+
+const GIFTICONS = [
+  {
+    brand: "Starbucks",
+    name: "스타벅스",
+    bg: "from-[#00704A] to-[#1e3932]",
+    badge: "bg-[#CBA258]",
+    logo: (
+      <svg viewBox="0 0 100 100" className="w-10 h-10" fill="white">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="white" strokeWidth="3"/>
+        <text x="50" y="58" textAnchor="middle" fontSize="36" fontWeight="bold" fill="white">★</text>
+      </svg>
+    ),
+    amount: "5,000원권",
+  },
+  {
+    brand: "Baemin",
+    name: "배달의민족",
+    bg: "from-[#2AC1BC] to-[#1a9490]",
+    badge: "bg-[#FFEB00]",
+    logo: (
+      <svg viewBox="0 0 100 100" className="w-10 h-10" fill="white">
+        <rect x="20" y="30" width="60" height="10" rx="5" fill="white"/>
+        <rect x="20" y="46" width="60" height="10" rx="5" fill="white"/>
+        <rect x="20" y="62" width="40" height="10" rx="5" fill="white"/>
+      </svg>
+    ),
+    amount: "5,000원권",
+  },
+  {
+    brand: "OliveYoung",
+    name: "올리브영",
+    bg: "from-[#B5003C] to-[#8B002E]",
+    badge: "bg-white",
+    logo: (
+      <svg viewBox="0 0 100 100" className="w-10 h-10" fill="white">
+        <circle cx="50" cy="42" r="22" fill="none" stroke="white" strokeWidth="5"/>
+        <rect x="43" y="60" width="14" height="22" rx="7" fill="white"/>
+      </svg>
+    ),
+    amount: "5,000원권",
+  },
 ];
 
 const FAQS = [
@@ -124,7 +167,7 @@ export default function RegisterPage() {
         </div>
 
         {/* 혜택 카드 */}
-        <div className="grid grid-cols-2 gap-3 mb-10">
+        <div className="grid grid-cols-2 gap-3 mb-8">
           {EVENT_BENEFITS.map((b) => (
             <div key={b.title} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
               <div className="text-2xl mb-2">{b.icon}</div>
@@ -132,6 +175,29 @@ export default function RegisterPage() {
               <div className="text-xs text-gray-500 mt-1 leading-relaxed">{b.desc}</div>
             </div>
           ))}
+        </div>
+
+        {/* 기프티콘 상품권 섹션 */}
+        <div className="mb-10">
+          <div className="text-center mb-4">
+            <span className="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full mb-2">🎁 이벤트 당첨 상품</span>
+            <h3 className="font-display text-lg font-bold text-gray-900">참여 이벤트 상품권을 드립니다!</h3>
+            <p className="text-xs text-gray-400 mt-1">커플 매칭 이벤트 당첨 시 아래 브랜드 기프티콘 증정</p>
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            {GIFTICONS.map((g) => (
+              <div key={g.brand} className={`bg-gradient-to-b ${g.bg} rounded-2xl p-4 flex flex-col items-center gap-2 shadow-md`}>
+                <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                  {g.logo}
+                </div>
+                <div className="text-white font-bold text-xs text-center leading-tight">{g.name}</div>
+                <div className={`${g.badge} text-[10px] font-bold px-2 py-0.5 rounded-full ${g.brand === "OliveYoung" ? "text-[#B5003C]" : g.brand === "Baemin" ? "text-gray-800" : "text-[#1e3932]"}`}>
+                  {g.amount}
+                </div>
+                <div className="text-white/70 text-[10px]">기프티콘</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* 폼 or 완료 */}
