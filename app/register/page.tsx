@@ -14,42 +14,20 @@ const GIFTICONS = [
   {
     brand: "Starbucks",
     name: "스타벅스",
-    bg: "from-[#00704A] to-[#1e3932]",
-    badge: "bg-[#CBA258]",
-    logo: (
-      <svg viewBox="0 0 100 100" className="w-10 h-10" fill="white">
-        <circle cx="50" cy="50" r="48" fill="none" stroke="white" strokeWidth="3"/>
-        <text x="50" y="58" textAnchor="middle" fontSize="36" fontWeight="bold" fill="white">★</text>
-      </svg>
-    ),
-    amount: "5,000원권",
-  },
-  {
-    brand: "Baemin",
-    name: "배달의민족",
-    bg: "from-[#2AC1BC] to-[#1a9490]",
-    badge: "bg-[#FFEB00]",
-    logo: (
-      <svg viewBox="0 0 100 100" className="w-10 h-10" fill="white">
-        <rect x="20" y="30" width="60" height="10" rx="5" fill="white"/>
-        <rect x="20" y="46" width="60" height="10" rx="5" fill="white"/>
-        <rect x="20" y="62" width="40" height="10" rx="5" fill="white"/>
-      </svg>
-    ),
-    amount: "5,000원권",
+    img: "/gifticons/starbucks.jpg",
+    amount: "3만원권",
   },
   {
     brand: "OliveYoung",
     name: "올리브영",
-    bg: "from-[#B5003C] to-[#8B002E]",
-    badge: "bg-white",
-    logo: (
-      <svg viewBox="0 0 100 100" className="w-10 h-10" fill="white">
-        <circle cx="50" cy="42" r="22" fill="none" stroke="white" strokeWidth="5"/>
-        <rect x="43" y="60" width="14" height="22" rx="7" fill="white"/>
-      </svg>
-    ),
-    amount: "5,000원권",
+    img: "/gifticons/oliveyoung.jpg",
+    amount: "3만원권",
+  },
+  {
+    brand: "Baemin",
+    name: "배달의민족",
+    img: "/gifticons/baemin.jpg",
+    amount: "3만원권",
   },
 ];
 
@@ -186,15 +164,16 @@ export default function RegisterPage() {
           </div>
           <div className="grid grid-cols-3 gap-3">
             {GIFTICONS.map((g) => (
-              <div key={g.brand} className={`bg-gradient-to-b ${g.bg} rounded-2xl p-4 flex flex-col items-center gap-2 shadow-md`}>
-                <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
-                  {g.logo}
+              <div key={g.brand} className="rounded-2xl overflow-hidden shadow-md flex flex-col items-center bg-white border border-gray-100">
+                <img
+                  src={g.img}
+                  alt={`${g.name} 기프티콘`}
+                  className="w-full aspect-square object-cover"
+                />
+                <div className="py-2 px-1 text-center">
+                  <div className="text-gray-800 font-bold text-[11px] leading-tight">{g.name}</div>
+                  <div className="text-heart-600 text-[10px] font-bold mt-0.5">{g.amount}</div>
                 </div>
-                <div className="text-white font-bold text-xs text-center leading-tight">{g.name}</div>
-                <div className={`${g.badge} text-[10px] font-bold px-2 py-0.5 rounded-full ${g.brand === "OliveYoung" ? "text-[#B5003C]" : g.brand === "Baemin" ? "text-gray-800" : "text-[#1e3932]"}`}>
-                  {g.amount}
-                </div>
-                <div className="text-white/70 text-[10px]">기프티콘</div>
               </div>
             ))}
           </div>
